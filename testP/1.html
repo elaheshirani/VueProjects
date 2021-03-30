@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p>{{ changeTitle() }} - My Site <a v-bind:href="link">Google</a> </p>
+        <p v-html="finishedLink"></p>
+    </div>
+    <script>
+        new Vue({
+            el: '#app',
+            data : {
+                title : 'hello world',
+                link : 'http://google.com',
+                finishedLink : '<a href="http://google.com">google link</a>'
+            },
+            methods : {
+                changeTitle : function ()
+                {
+                    return this.title;
+                }
+            }
+        });
+    </script>
+</body>
+</html>

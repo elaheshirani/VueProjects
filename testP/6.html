@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List in Vue</title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+ <div id="app">
+    <ul>
+        <li v-for="(integration , index) in integrations">{{ integration }} ({{index}})</li>
+    </ul>
+
+     <ul>
+         <li v-for="person in persons">
+         <div v-for="(key , value, index) in person">{{ key }} : {{ value }} ({{index}})</div>
+         </li>
+     </ul>
+     <button ref="myButton">my button</button>
+     <button @click="show">my button2</button>
+ </div>
+ <script>
+     new Vue({
+        el : "#app",
+        data : {
+            integrations : ['meat','fruit'],
+            persons : [
+                { name : 'elahe', age : 26, color : 'red'},
+                { name : 'leila', age : 30, color : 'yellow'}
+            ]
+        },
+         methods : {
+            show : function(){
+                this.$refs.myButton.innerText = 'test2';
+            }
+         }
+
+     });
+ </script>
+
+</body>
+</html>

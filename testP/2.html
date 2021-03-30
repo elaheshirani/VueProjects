@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter</title>
+    <script type="text/javascript" src="vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="increaseCount">increase</button>
+        <p>{{ count }}</p>
+        <p v-on:mousemove="updateCoordinates">
+            {{ x }} / {{ y }}
+             - <span v-on:mousemove.stop> Dead Spot</span>
+        </p>
+        <input type="text" v-on:keyup.enter.space="alertMsg">
+    </div>
+    <script>
+        new Vue({
+           el:'#app',
+           data : {
+               count : 0,
+               x : 0,
+               y : 0
+           },
+            methods : {
+               increaseCount : function (){
+                   this.count++;
+               },
+                updateCoordinates : function (event){
+                   this.x = event.clientX;
+                   this.y = event.clientY;
+                },
+                alertMsg : function (){
+                   alert("ALert !");
+                }
+            }
+        });
+    </script>
+</body>
+</html>
