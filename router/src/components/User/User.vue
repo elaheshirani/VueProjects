@@ -5,6 +5,7 @@
         <h1>User Page</h1>
         <h3>Load ID : {{ id }}</h3>
         <b-button variant="info" @click="GoToHome">Go to Home</b-button>
+        <router-view></router-view>
       </b-col>
     </b-row>
   </b-container>
