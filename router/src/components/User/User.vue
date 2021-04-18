@@ -2,9 +2,8 @@
   <b-container>
     <b-row>
       <b-col md="12">
-        <h1>User Page</h1>
-        <h3>Load ID : {{ id }}</h3>
-        <b-button variant="info" @click="GoToHome">Go to Home</b-button>
+        <h4>User Page</h4>
+        <b-button variant="info" class="mb-3 mt-3" @click="GoToHome">Go to Home</b-button>
         <router-view></router-view>
       </b-col>
     </b-row>
