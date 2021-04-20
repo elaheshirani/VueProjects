@@ -26,7 +26,8 @@ export default {
   },
   methods : {
     GoToHome(){
-      this.$router.push('/');
+      //this.$router.push('/');
+      this.$router.push({ name : 'home'});
     }
   }
 }
